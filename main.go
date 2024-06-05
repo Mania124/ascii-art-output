@@ -1,6 +1,7 @@
 package main
 
 import (
+	o "ascii-art-output/functions"
 	"fmt"
 	"os"
 	"strings"
@@ -38,13 +39,16 @@ func main() {
 		// 	fmt.Println("Usage: go run . [OPTION] [STRING] [BANNER]\n\nEX: go run . --output=<fileName.txt> something standard")
 		// 	os.Exit(0)
 		// }
-		input = os.Args[1]
+		input = os.Args[2]
 		outputFile = os.Args[1][9:]
 	}
 	fmt.Println(input)
 	fmt.Println(outputFile)
-	//banner := o.FileName()
-	//fmt.Println(banner)
-	//art := o.BannerArt(banner)
+	banner := o.FileName()
+	fmt.Println(banner)
+	art := o.BannerArt(banner)
 	//fmt.Println(art)
+	oupt := o.Art(input, art)
+	o.CreateFile(outputFile, oupt)
+
 }

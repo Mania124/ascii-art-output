@@ -18,7 +18,7 @@ func BannerArt(s string) map[int][]string {
 	}
 	defer file.Close()
 	var count int
-	var key int = 0
+	var key int = 32
 	scanner := bufio.NewScanner(file)
 
 	for scanner.Scan() {
