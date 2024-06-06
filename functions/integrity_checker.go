@@ -31,7 +31,7 @@ func CheckStatus(s string) {
 	switch s {
 	case "banners/standard.txt":
 		if info, _ := os.Stat("banners/standard.txt"); info.Size() != 6623 {
-			fmt.Println("File content changed. Please confirm!")
+			fmt.Println("File content changed in  the 'standard' banner file. Please confirm!")
 			os.Exit(1)
 		}
 		// if info.IsDir() {
@@ -40,7 +40,7 @@ func CheckStatus(s string) {
 		// }
 	case "banners/shadow.txt":
 		if info, _ := os.Stat("banners/shadow.txt"); info.Size() != 7463 {
-			fmt.Println("File content changed. Please confirm!")
+			fmt.Println("File content changed in the 'shadow' banner file. Please confirm!")
 			os.Exit(1)
 		}
 		// if stat.IsDir() {
@@ -49,7 +49,7 @@ func CheckStatus(s string) {
 		// }
 	case "banners/thinkertoy.txt":
 		if info, _ := os.Stat("banners/thinkertoy.txt"); info.Size() != 5558 {
-			fmt.Println("File content changed. Please confirm!")
+			fmt.Println("File content changed in the 'thinkertoy' banner file. Please confirm!")
 			os.Exit(1)
 		}
 		// if stat.IsDir() {
