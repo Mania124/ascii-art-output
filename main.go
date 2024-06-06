@@ -44,7 +44,7 @@ func main() {
 	}
 	fmt.Println(input)
 	fmt.Println(outputFile)
-	banner := o.FileName()
+	banner := "banners/"+o.FileName()
 	fmt.Println(banner)
 	art := o.BannerArt(banner)
 	//fmt.Println(art)

@@ -10,7 +10,7 @@ import (
 //Acts by replacing a non-existing banner file when called
 //it does this by fetching the raw file from a remote server and copying the body into a recreated empty file of the same name
 func Download(fileName string) error {
-	response, err := http.Get("https://learn.zone01kisumu.ke/git/root/public/raw/subjects/ascii-art/" + fileName)
+	response, err := http.Get("https://learn.zone01kisumu.ke/git/root/public/raw/subjects/ascii-art/" + fileName[8:])
 	if err != nil {
 		return fmt.Errorf("URL failed")
 	}
