@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-//Checks the properties of banner file with focus on size and non-exist error
+// Checks the properties of banner file with focus on size and non-exist error
 func CheckStatus(s string) {
 	_, err := os.Stat(s)
 	if os.IsNotExist(err) {
@@ -27,9 +27,10 @@ func CheckStatus(s string) {
 		}
 
 	}
+
 	switch s {
-	case "standard.txt":
-		if info, _ := os.Stat("standard.txt"); info.Size() != 6623 {
+	case "banners/standard.txt":
+		if info, _ := os.Stat("banners/standard.txt"); info.Size() != 6623 {
 			fmt.Println("File content changed. Please confirm!")
 			os.Exit(1)
 		}
@@ -37,8 +38,8 @@ func CheckStatus(s string) {
 		// 	fmt.Println("This is a directory. Please confirm!")
 		// 	os.Exit(1)
 		// }
-	case "shadow.txt":
-		if info, _ := os.Stat("shadow.txt"); info.Size() != 7463 {
+	case "banners/shadow.txt":
+		if info, _ := os.Stat("banners/shadow.txt"); info.Size() != 7463 {
 			fmt.Println("File content changed. Please confirm!")
 			os.Exit(1)
 		}
@@ -46,8 +47,8 @@ func CheckStatus(s string) {
 		// 	fmt.Println("This is a directory. Please confirm!")
 		// 	os.Exit(1)
 		// }
-	case "thinkertoy.txt":
-		if info, _ := os.Stat("thinkertoy.txt"); info.Size() != 5558 {
+	case "banners/thinkertoy.txt":
+		if info, _ := os.Stat("banners/thinkertoy.txt"); info.Size() != 5558 {
 			fmt.Println("File content changed. Please confirm!")
 			os.Exit(1)
 		}
@@ -56,5 +57,4 @@ func CheckStatus(s string) {
 		// 	os.Exit(1)
 		// }
 	}
-
 }
