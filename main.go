@@ -28,6 +28,10 @@ func main() {
 			os.Exit(0)
 		}
 		outputFile = os.Args[1][9:]
+		if !strings.HasSuffix(outputFile, ".txt") {
+			fmt.Println("The output file should be a '.txt' file. Please confirm and rerun.\n\nUsage: go run . [OPTION] [STRING] [BANNER]\n\nEX: go run . --output=<fileName.txt> something standard")
+			os.Exit(1)
+		}
 		input = os.Args[2]
 	}
 	if len(os.Args) == 3 {
@@ -41,11 +45,15 @@ func main() {
 		// }
 		input = os.Args[2]
 		outputFile = os.Args[1][9:]
+		if !strings.HasSuffix(outputFile, ".txt") {
+			fmt.Println("The output file should be a '.txt' file. Please confirm and rerun.\n\nUsage: go run . [OPTION] [STRING] [BANNER]\n\nEX: go run . --output=<fileName.txt> something standard")
+			os.Exit(0)
+		}
 	}
-	fmt.Println(input)
-	fmt.Println(outputFile)
-	banner := "banners/"+o.FileName()
-	fmt.Println(banner)
+	//fmt.Println(input)
+	//fmt.Println(outputFile)
+	banner := "banners/" + o.FileName()
+	//fmt.Println(banner)
 	art := o.BannerArt(banner)
 	//fmt.Println(art)
 	oupt := o.Art(input, art)
