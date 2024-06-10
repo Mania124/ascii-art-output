@@ -34,27 +34,18 @@ func CheckStatus(s string) {
 			fmt.Println("File content changed in  the 'standard' banner file. Please confirm!")
 			os.Exit(1)
 		}
-		// if info.IsDir() {
-		// 	fmt.Println("This is a directory. Please confirm!")
-		// 	os.Exit(1)
-		// }
+
 	case "banners/shadow.txt":
 		if info, _ := os.Stat("banners/shadow.txt"); info.Size() != 7463 {
 			fmt.Println("File content changed in the 'shadow' banner file. Please confirm!")
 			os.Exit(1)
 		}
-		// if stat.IsDir() {
-		// 	fmt.Println("This is a directory. Please confirm!")
-		// 	os.Exit(1)
-		// }
+
 	case "banners/thinkertoy.txt":
 		if info, _ := os.Stat("banners/thinkertoy.txt"); info.Size() != 5558 {
 			fmt.Println("File content changed in the 'thinkertoy' banner file. Please confirm!")
 			os.Exit(1)
 		}
-		// if stat.IsDir() {
-		// 	fmt.Println("This is a directory. Please confirm!")
-		// 	os.Exit(1)
-		// }
+
 	}
 }
