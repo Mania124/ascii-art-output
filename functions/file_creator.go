@@ -5,16 +5,17 @@ import (
 	"os"
 )
 
-func CreateFile(FilePath string, content string) {
+func CreateFile(FilePath string, content string) error {
 	file, err := os.Create(FilePath)
 	if err != nil {
-		fmt.Println("os error in file ceration")
-		os.Exit(1)
+		return fmt.Errorf("error in file creation: %w", err)
 	}
 	defer file.Close()
-	_, er := file.WriteString(content)
-	if er != nil {
-		fmt.Println("err in writing output content")
-		os.Exit(1)
+
+	_, err = file.WriteString(content)
+	if err != nil {
+		return fmt.Errorf("error in writing content: %w", err)
 	}
+
+	return nil
 }
