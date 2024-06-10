@@ -10,6 +10,7 @@ func Art(s string, mYmap map[int][]string) string {
 	var str string
 	s = strings.ReplaceAll(s, "\n", "\\n")
 	input := strings.Split(s, "\\n")
+	// generating ascii-art for a string 
 	for j, word := range input {
 		if word == "" && j != len(input)-1 {
 			str += fmt.Sprintln()
@@ -17,6 +18,7 @@ func Art(s string, mYmap map[int][]string) string {
 		} else if word != "" {
 			for i := 1; i <= 8; i++ {
 				for _, cha := range word {
+					// check if character is a printable chararcter 
 					if ok := (cha >= ' ' && cha <= rune(126)) || (cha == '\n') && word != ""; ok {
 						str += mYmap[int(cha)][i]
 					} else if !ok {
@@ -28,6 +30,5 @@ func Art(s string, mYmap map[int][]string) string {
 			}
 		}
 	}
-
 	return str
 }
