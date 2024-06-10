@@ -1,6 +1,9 @@
 package functions
 
-import "os"
+import (
+	"os"
+	"strings"
+)
 
 func FileName() string {
 	if len(os.Args) == 2 || len(os.Args) == 3 {
@@ -8,7 +11,7 @@ func FileName() string {
 	}
 
 	if len(os.Args) == 4 {
-		switch os.Args[3] {
+		switch strings.ToLower(os.Args[3]) {
 		case "standard":
 			return "standard.txt"
 		case "thinkertoy":

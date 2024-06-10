@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-//Creates a map of ascii art from a chosen banner file
+// Creates a map of ascii art from a chosen banner file
 func BannerArt(s string) map[int][]string {
 	var myMap = make(map[int][]string)
 	var slice []string
