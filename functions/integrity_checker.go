@@ -6,6 +6,7 @@ import (
 )
 
 // Checks the properties of banner file with focus on size and non-exist error
+// Function also calls the download fuction incase of non-exist error and executes it based on user input
 func CheckStatus(s string) {
 	_, err := os.Stat(s)
 	if os.IsNotExist(err) {
