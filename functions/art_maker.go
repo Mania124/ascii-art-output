@@ -20,7 +20,7 @@ func Art(s string, mYmap map[int][]string) string {
 			str += fmt.Sprintln()
 			continue
 		} else if word != "" {
-			for i := 1; i <= 8; i++ {
+			for i := 0; i < 8; i++ {
 				for _, cha := range word {
 					// check if character is a printable chararcter
 					if ok := (cha >= ' ' && cha <= rune(126)) || (cha == '\n'); ok {
