@@ -21,7 +21,7 @@ func FileName() string {
 		case "shadow":
 			return "shadow.txt"
 		default:
-			return "standard.txt"
+			return "Invalid bannerfile name"
 		}
 	}
 	return ""

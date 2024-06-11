@@ -17,7 +17,7 @@ func TestFileName(t *testing.T) {
 		{"FourArgsStandard", []string{"progName", "arg1", "arg2", "standard"}, "standard.txt"},
 		{"FourArgsThinkertoy", []string{"progName", "arg1", "arg2", "thinkertoy"}, "thinkertoy.txt"},
 		{"FourArgsShadow", []string{"progName", "arg1", "arg2", "shadow"}, "shadow.txt"},
-		{"FourArgsInvalid", []string{"progName", "arg1", "arg2", "invalid"}, "standard.txt"},
+		{"FourArgsInvalid", []string{"progName", "arg1", "arg2", "invalid"}, "Invalid bannerfile name"},
 	}
 
 	for _, tc := range testCases {
