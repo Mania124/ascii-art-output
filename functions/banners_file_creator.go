@@ -23,7 +23,9 @@ func BannerArt(s string) map[int][]string {
 
 	for scanner.Scan() {
 		count++
-		slice = append(slice, scanner.Text())
+		if scanner.Text() != "" {
+			slice = append(slice, scanner.Text())
+		}
 		if count == 9 {
 			myMap[key] = slice
 			key++
