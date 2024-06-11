@@ -15,8 +15,13 @@ func main() {
 		os.Exit(0)
 	}
 	if len(os.Args) == 2 {
-		input = os.Args[1]
-		outputFile = "banner.txt"
+		if !strings.HasPrefix(os.Args[1], "-") {
+			input = os.Args[1]
+			outputFile = "banner.txt"
+		} else {
+			fmt.Println("Usage: go run . [OPTION] [STRING] [BANNER]\n\nEX: go run . --output=<fileName.txt> something standard")
+			os.Exit(0)
+		}
 	}
 	if len(os.Args) == 4 {
 		if !(strings.ToLower(os.Args[3]) == "standard" || strings.ToLower(os.Args[3]) == "shadow" || strings.ToLower(os.Args[3]) == "thinkertoy") {
